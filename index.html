@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Fernando J. Chapermann · Clínica Médica e Infectologia</title>
+<style>
+:root{--bg:#f6f4ef;--surface:#fff;--ink:#16302b;--muted:#5b6f6a;--brand:#0f6b5c;--brand-ink:#fff;--accent:#c9893a;--line:#dfe5e1;--bubble-u:#0f6b5c;--bubble-m:#eef3f0;--warn:#fff4e0;--warn-ink:#6b4510;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a18;--surface:#152623;--ink:#e6efec;--muted:#98aea8;--brand:#3fb59f;--brand-ink:#06201b;--accent:#e0a85a;--line:#25403a;--bubble-u:#2a8f7b;--bubble-m:#1b302b;--warn:#2e2411;--warn-ink:#f0cf94}}
+:root[data-theme="dark"]{--bg:#0e1a18;--surface:#152623;--ink:#e6efec;--muted:#98aea8;--brand:#3fb59f;--brand-ink:#06201b;--accent:#e0a85a;--line:#25403a;--bubble-u:#2a8f7b;--bubble-m:#1b302b;--warn:#2e2411;--warn-ink:#f0cf94}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--surface:#152623}}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif}
+h1,h2,h3,nav,button,.sans{font-family:"Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif}
+a{color:var(--brand)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border-bottom:1px solid var(--line)}
+.bar{max-width:1080px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
+.brand{font:600 15px "Segoe UI",system-ui,sans-serif;letter-spacing:.02em}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+nav{display:flex;gap:18px;font-size:14px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--ink)}
+nav a:hover{color:var(--brand)}
+.wrap{max-width:1080px;margin:auto;padding:0 20px}
+.hero{display:grid;grid-template-columns:1fr 1.15fr;gap:40px;padding:56px 0 40px;align-items:start}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding-top:32px}}
+.eyebrow{font:600 12px "Segoe UI",system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(30px,4.6vw,46px);line-height:1.12;margin:10px 0 16px;font-weight:600}
+.lead{color:var(--muted);font-size:18px;max-width:46ch}
+.persona{display:flex;gap:14px;align-items:center;margin-top:26px}
+.persona svg{width:84px;height:84px;flex:none;border-radius:50%;box-shadow:0 0 0 3px var(--surface),0 0 0 4px var(--line)}
+.persona b{font-family:"Segoe UI",system-ui,sans-serif}
+.persona span{display:block;color:var(--muted);font-size:14px}
+.notice{margin-top:22px;background:var(--warn);color:var(--warn-ink);border-radius:10px;padding:12px 14px;font:14px/1.5 "Segoe UI",system-ui,sans-serif}
+.chat{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 40px rgba(15,60,50,.10);display:flex;flex-direction:column;overflow:hidden}
+.chat-h{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line);font:600 15px "Segoe UI",system-ui,sans-serif}
+.lgpd{padding:8px 18px;background:var(--warn);color:var(--warn-ink);font:12.5px "Segoe UI",system-ui,sans-serif}
+.dot{width:9px;height:9px;border-radius:50%;background:#2fb36b}
+.log{padding:18px;height:420px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.m{max-width:86%;padding:10px 14px;border-radius:16px;white-space:pre-wrap;word-wrap:break-word;font:15px/1.5 "Segoe UI",system-ui,sans-serif}
+.m.a{background:var(--bubble-m);border-bottom-left-radius:4px;align-self:flex-start}
+.m.u{background:var(--bubble-u);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.opts{display:flex;flex-wrap:wrap;gap:8px;padding:0 18px 14px}
+.opts button,.act{font:500 14px "Segoe UI",system-ui,sans-serif;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 13px;border-radius:999px;cursor:pointer}
+.opts button:hover{border-color:var(--brand);color:var(--brand)}
+.send{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+.send input{flex:1;font:15px "Segoe UI",system-ui,sans-serif;padding:11px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-width:0}
+.send button{background:var(--brand);color:var(--brand-ink);border:0;border-radius:999px;padding:0 20px;font:600 14px "Segoe UI",system-ui,sans-serif;cursor:pointer}
+.send button:disabled{opacity:.5;cursor:default}
+.wa{display:none;margin:0 18px 14px;padding:12px 14px;border-radius:12px;background:var(--bubble-m);font:14px "Segoe UI",system-ui,sans-serif}
+.wa a.btn{display:inline-block;margin-top:8px;background:#1fa855;color:#fff;text-decoration:none;padding:9px 15px;border-radius:999px;font-weight:600}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:28px;margin:0 0 6px;font-weight:600}
+.sub{color:var(--muted);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card h3{margin:0 0 6px;font-size:17px}
+.card p{margin:0 0 10px;color:var(--muted);font-size:15px}
+.price{font:600 28px "Segoe UI",system-ui,sans-serif;color:var(--brand)}
+.cta{display:inline-block;background:var(--brand);color:var(--brand-ink);padding:10px 18px;border-radius:999px;text-decoration:none;font:600 14px "Segoe UI",system-ui,sans-serif}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media(max-width:760px){.about{grid-template-columns:1fr}}
+.about dl{margin:0;font:15px/1.5 "Segoe UI",system-ui,sans-serif}
+.about dt{color:var(--muted);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:14px}
+.about dd{margin:2px 0 0}
+footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font:13px/1.6 "Segoe UI",system-ui,sans-serif}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <div class="brand">Dr. Fernando J. Chapermann<small>Clínica Médica · Infectologia · CRM-RJ 817163</small></div>
+  <nav><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#consulta">Consulta</a><a href="#contato">Contato</a></nav>
+</div></header>
+
+<main class="wrap">
+<div class="hero" id="inicio">
+  <div>
+    <div class="eyebrow">FM2R Serviços Médicos</div>
+    <h1>Cuidado clínico atento, com agendamento sem fricção.</h1>
+    <p class="lead">Consultas presenciais em Copacabana e atendimento domiciliar. Quem recebe você é a MarIA, secretária executiva do Dr. Fernando.</p>
+    <div class="persona">
+      <svg viewBox="0 0 100 100" role="img" aria-label="MarIA">
+        <rect width="100" height="100" fill="#0f6b5c"/>
+        <path d="M18 100c2-24 16-34 32-34s30 10 32 34z" fill="#f3efe6"/>
+        <path d="M38 66l12 14 12-14" fill="none" stroke="#c9893a" stroke-width="3"/>
+        <rect x="44" y="52" width="12" height="16" rx="5" fill="#e7bf9a"/>
+        <ellipse cx="50" cy="38" rx="17" ry="20" fill="#f0cba5"/>
+        <path d="M31 40c-3-22 12-30 24-27 12 2 18 14 14 27-3-9-8-14-14-15-9 3-18 4-24 15z" fill="#3b2a24"/>
+        <circle cx="43" cy="40" r="1.8" fill="#3b2a24"/><circle cx="57" cy="40" r="1.8" fill="#3b2a24"/>
+        <path d="M43 48q7 6 14 0" fill="none" stroke="#a5513f" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div><b>MarIA</b><span>Secretária executiva · responde agora</span></div>
+    </div>
+    <div class="notice">Atendimento somente particular, sem planos de saúde. Não realizamos atendimento de emergência: em urgência, ligue 192 (SAMU) ou procure o pronto-socorro mais próximo.</div>
+  </div>
+
+  <div class="chat" aria-label="Conversa com a MarIA">
+    <div class="chat-h"><span class="dot"></span>Converse com a MarIA</div>
+    <div class="lgpd">Ao conversar, você concorda que os dados informados sejam encaminhados ao consultório para fins de agendamento e atendimento (LGPD).</div>
+    <div class="log" id="log" aria-live="polite"></div>
+    
+    <div class="opts" id="opts"></div>
+    <form class="send" id="form"><input id="inp" placeholder="Escreva sua mensagem…" autocomplete="off" aria-label="Mensagem"><button id="go" type="submit">Enviar</button></form>
+  </div>
+</div>
+
+<section id="consulta">
+  <h2>Como ser atendido</h2>
+  <p class="sub">Duas modalidades, um mesmo padrão de cuidado.</p>
+  <div class="grid">
+    <div class="card"><h3>Consulta presencial</h3><p>Somente às terças-feiras, pela manhã, à tarde ou à noite, em Copacabana.</p><a class="cta" href="https://saudedireta.com.br/iclin/aol/agendas.php?c=128187" target="_blank" rel="noopener">Agendar online</a></div>
+    <div class="card"><h3>Atendimento domiciliar</h3><p>O orçamento é personalizado, calculado conforme a distância até o endereço. A MarIA coleta os dados e o consultório retorna com o valor.</p><button class="act" data-send="Quero atendimento domiciliar">Solicitar orçamento</button></div>
+    <div class="card"><h3>Pré-agendamento</h3><p>Prefere que a equipe reserve o horário por você? Informe o turno e seus dados; a confirmação segue por e-mail e WhatsApp em até 24 horas.</p><button class="act" data-send="Quero fazer um pré-agendamento">Fazer pré-agendamento</button></div>
+  </div>
+</section>
+
+<section id="sobre">
+  <h2>Sobre o Dr. Fernando</h2>
+  <p class="sub">Medicina interna e doenças infecciosas, com prática em ambiente hospitalar.</p>
+  <div class="about">
+    <dl><dt>Especialidades</dt><dd>Clínica Médica e Infectologia</dd><dt>Registro</dt><dd>CRM-RJ 817163</dd><dt>Empresa</dt><dd>FM2R Serviços Médicos</dd></dl>
+    <dl><dt>Outros assuntos</dt><dd>Atualização de receitas, dúvidas com o Dr. Fernando, questões financeiras e solicitação de recibo médico: a MarIA encaminha tudo ao consultório.</dd></dl>
+  </div>
+</section>
+
+<section id="contato">
+  <h2>Localização e contato</h2>
+  <p class="sub">Av. Nossa Senhora de Copacabana, 1066 · Sala 1102 · Copacabana · Rio de Janeiro · CEP 22010-122</p>
+  <div class="grid">
+    <div class="card"><h3>WhatsApp</h3><p>(21) 98893-4020</p><a class="cta" href="https://wa.me/5521988934020" target="_blank" rel="noopener">Abrir conversa</a></div>
+    <div class="card"><h3>Telefone</h3><p>(21) 99974-4020</p></div>
+    <div class="card"><h3>E-mail</h3><p><a href="mailto:chapermann@gmail.com">chapermann@gmail.com</a></p></div>
+    <div class="card"><h3>Mapa</h3><p>Veja a rota até o consultório.</p><a class="cta" href="https://www.google.com/maps/search/?api=1&query=Av.+Nossa+Senhora+de+Copacabana+1066+Rio+de+Janeiro" target="_blank" rel="noopener">Google Maps</a></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  Dr. Fernando José Chapermann · CRM-RJ 817163 · FM2R Serviços Médicos. A MarIA é uma assistente virtual de atendimento administrativo e não oferece orientação médica, diagnóstico ou prescrição. Os dados informados na conversa são usados apenas para agendamento e atendimento, conforme a LGPD.
+</div></footer>
+
+<script>
+(function(){
+var LINK="https://saudedireta.com.br/iclin/aol/agendas.php?c=128187";
+var SID=(window.crypto&&crypto.randomUUID?crypto.randomUUID():String(Date.now()));
+var GREET="Olá! Eu sou a MarIA, secretária executiva do Dr. Fernando José Chapermann.\nEm que posso ajudar você agora?\n\nLembrete: não trabalhamos com planos de saúde e não atendemos emergências.";
+var OPTS=[["Agendar consulta","Quero agendar uma consulta"],["Pré-agendamento","Quero fazer um pré-agendamento"],["Confirmar consulta","Quero confirmar uma consulta já marcada"],["Cancelar consulta","Quero cancelar uma consulta"],["Atendimento domiciliar","Quero atendimento domiciliar"],["Outro assunto","Tenho outro assunto"]];
+var log=document.getElementById("log"),inp=document.getElementById("inp"),go=document.getElementById("go"),optsEl=document.getElementById("opts"),form=document.getElementById("form");
+var hist=[],busy=false,enviado=false;
+function linkify(el,t){var re=/(https?:\/\/[^\s)]+)/g,l=0,m;while((m=re.exec(t))){el.appendChild(document.createTextNode(t.slice(l,m.index)));var a=document.createElement("a");a.href=m[1];a.target="_blank";a.rel="noopener";a.textContent=m[1];el.appendChild(a);l=m.index+m[1].length}el.appendChild(document.createTextNode(t.slice(l)))}
+function add(r,t){var d=document.createElement("div");d.className="m "+(r==="u"?"u":"a");if(r==="u")d.textContent=t;else linkify(d,t);log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+async function send(t){
+  t=(t||"").trim();if(!t||busy)return;
+  optsEl.style.display="none";add("u",t);hist.push({role:"user",content:t});inp.value="";
+  busy=true;go.disabled=true;var b=add("a","…");
+  try{
+    var r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({sessionId:SID,messages:hist,resumoEnviado:enviado})});
+    var d=await r.json();if(!d.reply)throw new Error(d.error||"erro");
+    if(d.resumoEnviado)enviado=true;
+    b.textContent="";linkify(b,d.reply);hist.push({role:"assistant",content:d.reply});
+  }catch(e){hist.pop();b.textContent="";linkify(b,"Desculpe, não consegui responder agora. Você pode agendar em "+LINK+" ou falar com o consultório pelo WhatsApp (21) 98893-4020.")}
+  busy=false;go.disabled=false;inp.focus();
+}
+add("a",GREET);
+OPTS.forEach(function(o){var b=document.createElement("button");b.type="button";b.textContent=o[0];b.onclick=function(){send(o[1])};optsEl.appendChild(b)});
+form.addEventListener("submit",function(e){e.preventDefault();send(inp.value)});
+document.querySelectorAll("[data-send]").forEach(function(b){b.onclick=function(){document.getElementById("inicio").scrollIntoView();send(b.getAttribute("data-send"))}});
+})();
+</script>
+</body>
+</html>
